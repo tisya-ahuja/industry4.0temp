@@ -1,0 +1,6 @@
+Step,Rows_Before,Rows_After,Rows_Removed,Columns_After
+Remove exact duplicates,541909,536641,5268,8
+Remove missing Description,536641,535187,1454,8
+Remove cancellation invoices,535187,525936,9251,8
+Keep positive quantities,525936,525462,474,8
+Keep positive unit prices,525462,524878,584,8

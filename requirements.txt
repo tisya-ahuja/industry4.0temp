@@ -1,0 +1,11 @@
+
+# Data Analysis and Manipulation
+numpy
+pandas
+
+# Excel File Handling
+openpyxl
+
+# Data Visualization
+matplotlib
+seaborn
