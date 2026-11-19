@@ -8,18 +8,12 @@ python -m pip install -r requirements.txt
 
 then
 
-
- ```sh
- python tisya/clean.py 
+```sh
+ python tisya/clean.py
 ```
-
-
-(the cleaned excel file is too large to put in git so you can either run the code or convert the csv one to get it)
 
 or
 
-
- ```sh
+```sh
  python anant-drive/nextgen_dynamic_pricing_analysis.py
- ```
- 
+```
