@@ -33,7 +33,7 @@ import numpy as np
 import pandas as pd
 
 # Path to the raw dataset file downloaded from UCI (xlsx or csv).
-FILE_PATH = "Online Retail.xlsx"  # change to your file name if different
+FILE_PATH = "data/Online Retail.xlsx"  # change to your file name if different
 
 # Products enter the elasticity step only if they have at least this many
 # distinct selling prices and this many transaction lines (proposal Sec. 5).
@@ -97,7 +97,7 @@ def clean_data(df):
 
     # Save the cleaned dataset so the team has one shared clean file
     # (no cleaned file was kept from the earlier proposal EDA).
-    df.to_csv("cleaned_online_retail_uk.csv", index=False)
+    df.to_csv("anant-drive/cleaned_online_retail_uk.csv", index=False)
     print("Cleaned dataset saved to cleaned_online_retail_uk.csv\n")
     return df
 
@@ -243,7 +243,7 @@ def estimate_elasticities(df, panel):
           "spread relevant to H2)\n")
 
     elast = elast.sort_values("elasticity")
-    elast.to_csv("elasticity_results.csv", index=False)
+    elast.to_csv("anant-drive/elasticity_results.csv", index=False)
     print("Full table saved to elasticity_results.csv\n")
     return elast, candidates
 
