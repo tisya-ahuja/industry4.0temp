@@ -1,0 +1,83 @@
+POWER BI STARTER DAX MEASURES
+=============================
+
+Assumed table names:
+  FactSales
+  ProductMonth
+  Product
+  Calendar
+  Month
+  ElasticityResults
+  PricingScenarios
+  ProductRecommendations
+
+Create relationships:
+  Product[StockCode] 1 -> * FactSales[StockCode]
+  Product[StockCode] 1 -> * ProductMonth[StockCode]
+  Product[StockCode] 1 -> * ElasticityResults[StockCode]
+  Product[StockCode] 1 -> * PricingScenarios[StockCode]
+  Product[StockCode] 1 -> * ProductRecommendations[StockCode]
+  Calendar[Date] 1 -> * FactSales[Date]
+  Month[MonthStart] 1 -> * ProductMonth[MonthStart]
+
+Use single-direction filtering from dimensions to facts. Mark Calendar as
+the date table using Calendar[Date]. Sort MonthName by MonthNumber.
+
+BASIC MEASURES
+--------------
+
+Total Revenue = SUM(FactSales[Revenue])
+
+Total Quantity = SUM(FactSales[Quantity])
+
+Total Invoices = DISTINCTCOUNT(FactSales[InvoiceNo])
+
+Unique Customers = DISTINCTCOUNT(FactSales[CustomerID])
+
+Unique Products = DISTINCTCOUNT(FactSales[StockCode])
+
+Average Selling Price = DIVIDE([Total Revenue], [Total Quantity])
+
+Products with Elasticity =
+DISTINCTCOUNT(ElasticityResults[StockCode])
+
+Elastic Products =
+CALCULATE(
+    DISTINCTCOUNT(ElasticityResults[StockCode]),
+    ElasticityResults[Elasticity] < -1
+)
+
+Inelastic Products =
+CALCULATE(
+    DISTINCTCOUNT(ElasticityResults[StockCode]),
+    ElasticityResults[Elasticity] >= -1,
+    ElasticityResults[Elasticity] < 0
+)
+
+Positive Elasticity Estimates =
+CALCULATE(
+    DISTINCTCOUNT(ElasticityResults[StockCode]),
+    ElasticityResults[Elasticity] >= 0
+)
+
+Median Elasticity = MEDIAN(ElasticityResults[Elasticity])
+
+Scenario measures can be built from the exported PricingScenarios table:
+Scenario Revenue = SUM(PricingScenarios[SimulatedRevenue])
+Baseline Scenario Revenue = SUM(PricingScenarios[BaselineRevenue])
+Scenario Revenue Difference =
+    [Scenario Revenue] - [Baseline Scenario Revenue]
+
+IMPORTANT:
+PricingScenarios already contains the seven fixed scenario changes
+(-15%, -10%, -5%, 0%, +5%, +10%, +15%). Add PriceChangePct or ScenarioName
+as a slicer. Do not sum all seven scenarios together; filter to exactly
+one scenario when displaying a scenario total.
+
+The exported scenario table holds products that fail the reliability
+screen at baseline revenue/quantity. ScenarioApplied identifies products
+for which the illustrative price adjustment was applied.
+
+For a fully interactive custom slider rather than the fixed seven scenarios,
+create a disconnected What-if parameter and use the elasticity formula in a
+measure. Validate its totals against the scenario export before presenting.

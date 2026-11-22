@@ -49,7 +49,7 @@ plt.rcParams["figure.dpi"] = 100
 # ============================================================
 
 # Change this path if your Excel file is stored elsewhere.
-FILE_PATH = "data/Online Retail.xlsx"
+FILE_PATH = "Online Retail.xlsx"
 
 # All output files and charts will be saved in this folder.
 OUTPUT_DIR = "tisya/online_retail_eda_output"

@@ -33,7 +33,7 @@ import numpy as np
 import pandas as pd
 
 # Path to the raw dataset file downloaded from UCI (xlsx or csv).
-FILE_PATH = "data/Online Retail.xlsx"  # change to your file name if different
+FILE_PATH = "Online Retail.xlsx"  # change to your file name if different
 
 # Products enter the elasticity step only if they have at least this many
 # distinct selling prices and this many transaction lines (proposal Sec. 5).

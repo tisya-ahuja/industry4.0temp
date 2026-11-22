@@ -1,0 +1,25 @@
+﻿Metric,Value,Definition
+Cleaning step,541909,Raw input rows
+Cleaning step,541909,After removing invalid/missing dates
+Cleaning step,532621,After removing cancellation invoices
+Cleaning step,530104,After retaining positive quantity and price
+Cleaning step,397884,After removing missing CustomerID
+Cleaning step,354321,After restricting to United Kingdom
+Cleaning step,353997,After removing non-product StockCodes
+Cleaning step,353997,Final cleaned rows
+Raw transaction rows,541909,Rows in source file
+Cleaned transaction rows,353997,Rows after documented cleaning
+Rows removed,187912,Raw minus cleaned rows
+Unique invoices,16590,Distinct invoice numbers
+Unique customers,3917,Distinct non-missing customers
+Unique products,3640,Distinct StockCodes
+Total revenue GBP,7266027.231,Quantity multiplied by UnitPrice
+Total quantity,4249519,Sum of positive quantities
+First transaction date,2010-12-01,Date range start
+Last transaction date,2011-12-09,Date range end
+Product-month rows,29801,Rows in product-month panel
+Products with elasticity,977,Products with estimable log-log regression
+Products passing scenario screen,301,"Negative elasticity, R2 threshold, observation threshold and non-extreme estimate"
+R-squared screen,0.3,"Exploratory project threshold, not universal rule"
+Maximum absolute elasticity screen,10.0,Extreme estimates held out of scenario adjustments
+Peak months,"November, December",Calendar months defined as peak in project script

@@ -1,0 +1,14 @@
+﻿MonthStart,Year,MonthNumber,MonthName,YearMonth,Quarter,IsPeakMonth,IsPartialMonth
+2010-12-01,2010,12,Dec,2010-12,Q4,True,False
+2011-01-01,2011,1,Jan,2011-01,Q1,False,False
+2011-02-01,2011,2,Feb,2011-02,Q1,False,False
+2011-03-01,2011,3,Mar,2011-03,Q1,False,False
+2011-04-01,2011,4,Apr,2011-04,Q2,False,False
+2011-05-01,2011,5,May,2011-05,Q2,False,False
+2011-06-01,2011,6,Jun,2011-06,Q2,False,False
+2011-07-01,2011,7,Jul,2011-07,Q3,False,False
+2011-08-01,2011,8,Aug,2011-08,Q3,False,False
+2011-09-01,2011,9,Sep,2011-09,Q3,False,False
+2011-10-01,2011,10,Oct,2011-10,Q4,False,False
+2011-11-01,2011,11,Nov,2011-11,Q4,True,False
+2011-12-01,2011,12,Dec,2011-12,Q4,True,True
